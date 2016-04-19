@@ -4,9 +4,8 @@ class Microsoft:
 
         import winreg
         import ctypes
-        import subprocess
 
-        self.message_string = "Hello world!\n"
+        self.message_string = "This is from the Microsoft class!\n"
 
 
 class Linux:

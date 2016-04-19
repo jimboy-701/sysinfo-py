@@ -1,6 +1,5 @@
 
-import os
-import sys
+import os, sys
 import platform
 from OSAnalysis import Microsoft
 

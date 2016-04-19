@@ -1,5 +1,6 @@
 
-import os, sys
+import os
+import sys
 import platform
 from OSAnalysis import Microsoft
 
@@ -24,7 +25,7 @@ print("This is the HWInfo python script.\n")
 
 
 getPython()
-getSpecs()
+# getSpecs()
 
 Windows = Microsoft()
 print(Windows.message_string)

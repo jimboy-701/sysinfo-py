@@ -1,13 +1,20 @@
 
-import os
 import sys
 import platform
 from OSAnalysis import Microsoft
 
 
+for i in range(len(sys.argv)):
+    if i == 0:
+        pass
+    else:
+        print(i, sys.argv[i])
+
+
 def getPython():
 
-    print(platform.python_version())
+    print(sys.executable)
+    print(sys.version)
 
 
 def getSpecs():

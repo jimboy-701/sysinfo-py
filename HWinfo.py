@@ -1,14 +1,29 @@
 
+# http://www.python-course.eu/sys_module.php
+
 import sys
 import platform
 from OSAnalysis import Microsoft
 
 
-for i in range(len(sys.argv)):
-    if i == 0:
-        pass
-    else:
-        print(i, sys.argv[i])
+def cmdargs(*args):
+    '''
+    Let's try to expand this by mapping arguments to variables
+    that can be stored in a dictionary... '''
+    arglist = list(args)
+    print(arglist)
+
+
+if (len(sys.argv)) > 0:
+    '''
+    In sys.argv[0], that 0 outputs the script name,
+    anything after that will be command line arguments. '''
+    for i in range(1, (len(sys.argv))):
+        cmdargs(sys.argv[i])
+#    if i == 0:
+#        pass
+#    else:
+#        cmdargs(sys.argv[0:])
 
 
 def getPython():
@@ -28,10 +43,10 @@ def getSpecs():
     print(platform.architecture())
 
 
-print("This is the HWInfo python script.\n")
+# print("This is the HWInfo python script.\n")
 
 
-getPython()
+# getPython()
 # getSpecs()
 
 Windows = Microsoft()

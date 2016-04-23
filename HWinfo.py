@@ -20,6 +20,7 @@ if (len(sys.argv)) > 0:
     anything after that will be command line arguments. '''
     for i in range(1, (len(sys.argv))):
         cmdargs(sys.argv[i])
+
 #    if i == 0:
 #        pass
 #    else:
@@ -27,6 +28,12 @@ if (len(sys.argv)) > 0:
 
 
 def getPython():
+
+    PY2 = sys.version[0] == 2
+
+    if PY2:
+        input("You need Python version >= 3.4 to execute this script.")
+        sys.exit([1])
 
     print(sys.executable)
     print(sys.version)

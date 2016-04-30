@@ -29,7 +29,7 @@ if (len(sys.argv)) > 0:
 
 def getPython():
 
-    PY2 = sys.version[0] == 2
+    PY2 = sys.version[0] == '2'
 
     if PY2:
         input("You need Python version >= 3.4 to execute this script.")
@@ -53,10 +53,10 @@ def getSpecs():
 # print("This is the HWInfo python script.\n")
 
 
-# getPython()
+getPython()
 # getSpecs()
 
-Windows = Microsoft()
-print(Windows.message_string)
+#Windows = Microsoft()
+#print(Windows.message_string)
 
 input()

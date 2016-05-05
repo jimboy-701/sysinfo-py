@@ -21,14 +21,8 @@ if (len(sys.argv)) > 0:
     for i in range(1, (len(sys.argv))):
         cmdargs(sys.argv[i])
 
-#    if i == 0:
-#        pass
-#    else:
-#        cmdargs(sys.argv[0:])
-
 
 def getPython():
-
     PY2 = sys.version[0] == '2'
 
     if PY2:
@@ -41,22 +35,30 @@ def getPython():
 
 def getSpecs():
 
+    p = platform.uname()
+    a = platform.architecture()
+    # uname() is a namedtuple and [1] is positional for the "node" or hostname
+    # attribute
+    print("hostname:", p[1])
+    print("OS:", p[0], p[2], a[0])
+
+    # [0]system='Windows', [1]node='blackchrome', [2]release='8', [3]version='6.2.9200'
+    # [4]machine='AMD64'
+    # [5]processor='Intel64 Family 6 Model 23 Stepping 10, GenuineIntel'
+
     print(platform.machine())
     print(platform.version())
     print(platform.platform())
-    print(platform.uname())
     print(platform.system())
     print(platform.processor())
     print(platform.architecture())
 
 
-# print("This is the HWInfo python script.\n")
-
-
 getPython()
-# getSpecs()
+getSpecs()
 
-#Windows = Microsoft()
-#print(Windows.message_string)
+if platform.system() == 'Windows':
+    Windows = Microsoft()
+    print(Windows.message_string)
 
 input()

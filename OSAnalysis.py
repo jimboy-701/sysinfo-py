@@ -6,22 +6,22 @@ import subprocess
 class Microsoft:
     def __init__(self,):
 
-        import winreg
-        import ctypes
-
-        self.message_string = "This is from the Microsoft class!\n"
+        self.message_string = "This is a Windows machine!\n"
 
 
 class Linux:
     def __init__(self,):
-        print("Linux section")
+
+        self.message_string = "This is a Linux machine!\n"
 
 
 class Bsd:
     def __init__(self,):
-        print("BSD section")
+
+        self.message_string = "This is a BSD machine!\n"
 
 
-class Unix:
+class Solaris:
     def __init__(self,):
-        print("Unix section")
+
+        self.message_string = "This is a Solaris machine!\n"

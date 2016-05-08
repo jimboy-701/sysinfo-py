@@ -3,7 +3,7 @@
 
 import sys
 import platform
-from OSAnalysis import Microsoft
+from OSAnalysis import * 
 
 
 def cmdargs(*args):
@@ -60,5 +60,9 @@ getSpecs()
 if platform.system() == 'Windows':
     Windows = Microsoft()
     print(Windows.message_string)
+
+elif platform.system() == 'Linux':
+    Gnu = Linux()
+    print(Gnu.message_string)
 
 input()

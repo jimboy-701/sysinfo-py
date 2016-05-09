@@ -71,7 +71,7 @@ elif 'BSD' in ident:
     BsdUnix = Bsd()
     print(BsdUnix.message_string)
 
-elif 'Solaris' in ident:
+elif 'SunOS' in ident:
     Sun = Solaris()
     print(Sun.message_string)
 

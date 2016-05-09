@@ -57,12 +57,22 @@ def getSpecs():
 getPython()
 getSpecs()
 
-if platform.system() == 'Windows':
+ident = platform.system()
+
+if 'Windows' in ident:
     Windows = Microsoft()
     print(Windows.message_string)
 
-elif platform.system() == 'Linux':
+elif 'Linux' in ident:
     Gnu = Linux()
     print(Gnu.message_string)
+
+elif 'BSD' in ident:
+    BsdUnix = Bsd()
+    print(BsdUnix.message_string)
+
+elif 'Solaris' in ident:
+    Sun = Solaris()
+    print(Sun.message_string)
 
 input()

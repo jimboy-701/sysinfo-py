@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
 
 # http://www.python-course.eu/sys_module.php
 
@@ -37,22 +39,25 @@ def getSpecs():
 
     p = platform.uname()
     a = platform.architecture()
+    n = platform.uname()
+
     # uname() is a namedtuple and [1] is positional for the "node" or hostname
     # attribute
     print("hostname:", p[1])
-    print("OS:", p[0], p[2], a[0])
+    print("Platform:", p[0], p[2])
+    print("Bits:", a[0])
+    print("Arch:", n[4])
 
     # [0]system='Windows', [1]node='blackchrome', [2]release='8', [3]version='6.2.9200'
     # [4]machine='AMD64'
     # [5]processor='Intel64 Family 6 Model 23 Stepping 10, GenuineIntel'
 
-    print(platform.machine())
-    print(platform.version())
-    print(platform.platform())
-    print(platform.system())
-    print(platform.processor())
-    print(platform.architecture())
-
+    #print(platform.machine())
+    #print(platform.version())
+    #print(platform.platform())
+    #print(platform.system())
+    #print(platform.processor())
+    #print(platform.architecture())
 
 getPython()
 getSpecs()

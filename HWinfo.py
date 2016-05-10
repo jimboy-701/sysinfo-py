@@ -26,8 +26,8 @@ def getPython():
     PY2 = sys.version[0] == '2'
 
     if PY2:
-        input("You need Python version >= 3.4 to execute this script.")
-        sys.exit([1])
+        print("You need Python version >= 3.4 to execute this script.")
+        raise TypeError("unsupported version") 
 
     print(sys.executable)
     print(sys.version)

@@ -25,3 +25,10 @@ class Solaris:
     def __init__(self,):
 
         self.message_string = "This is a Solaris machine!\n"
+
+
+class OSX:
+    def __init__(self,):
+
+        self.message_string = "This is Mac OSX machine!\n"
+

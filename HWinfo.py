@@ -39,14 +39,13 @@ def getSpecs():
 
     p = platform.uname()
     a = platform.architecture()
-    n = platform.uname()
 
     # uname() is a namedtuple and [1] is positional for the "node" or hostname
     # attribute
     print("hostname:", p[1])
     print("Platform:", p[0], p[2])
     print("Bits:", a[0])
-    print("Arch:", n[4])
+    print("Arch:", p[4])
 
     # [0]system='Windows', [1]node='blackchrome', [2]release='8', [3]version='6.2.9200'
     # [4]machine='AMD64'
@@ -79,5 +78,9 @@ elif 'BSD' in ident:
 elif 'SunOS' in ident:
     Sun = Solaris()
     print(Sun.message_string)
+
+elif 'Darwin' in ident:
+    Mac = OSX()
+    print(Mac.message_string)
 
 input()

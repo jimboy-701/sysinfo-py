@@ -32,3 +32,15 @@ class OSX:
 
         self.message_string = "This is Mac OSX machine!\n"
 
+
+class Android:
+    def __init__(self,):
+
+        self.message_string = "This is on an android cell phone!\n"
+
+
+class Iphone:
+    def __init__(self,):
+
+        self.message_string = "This is on an Apple iPhone cell phone!\n"
+        

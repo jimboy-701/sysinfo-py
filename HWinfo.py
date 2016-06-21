@@ -83,4 +83,12 @@ elif 'Darwin' in ident:
     Mac = OSX()
     print(Mac.message_string)
 
+elif 'Android' in ident:
+    Droid = Android()
+    print(Droid.message_string)
+
+elif 'iPhone' in ident:
+    Apple = Iphone()
+    print(Apple.message_string)
+
 input()

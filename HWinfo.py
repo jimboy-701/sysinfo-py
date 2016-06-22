@@ -91,4 +91,3 @@ elif 'iPhone' in ident:
     Apple = Iphone()
     print(Apple.message_string)
 
-input()

@@ -58,6 +58,7 @@ def getSpecs():
     # print(platform.processor())
     # print(platform.architecture())
 
+
 getPython()
 
 getSpecs()

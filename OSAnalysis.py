@@ -1,6 +1,6 @@
 
-import os
-import subprocess
+# import os
+# import subprocess
 
 
 class Microsoft:
@@ -43,4 +43,3 @@ class Iphone:
     def __init__(self,):
 
         self.message_string = "This is on an Apple iPhone cell phone!\n"
-        

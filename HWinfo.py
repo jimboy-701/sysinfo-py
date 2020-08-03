@@ -5,7 +5,7 @@
 
 import sys
 import platform
-from OSAnalysis import * 
+from OSAnalysis import *
 
 
 def cmdargs(*args):
@@ -29,7 +29,7 @@ def getPython():
 
     if PY2:
         print("You need Python version >= 3.4 to execute this script.")
-        raise TypeError("unsupported version") 
+        raise TypeError("unsupported version")
 
     print(sys.executable)
     print(sys.version)
@@ -51,14 +51,15 @@ def getSpecs():
     # [4]machine='AMD64'
     # [5]processor='Intel64 Family 6 Model 23 Stepping 10, GenuineIntel'
 
-    #print(platform.machine())
-    #print(platform.version())
-    #print(platform.platform())
-    #print(platform.system())
-    #print(platform.processor())
-    #print(platform.architecture())
+    # print(platform.machine())
+    # print(platform.version())
+    # print(platform.platform())
+    # print(platform.system())
+    # print(platform.processor())
+    # print(platform.architecture())
 
 getPython()
+
 getSpecs()
 
 ident = platform.system()

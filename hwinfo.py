@@ -57,7 +57,6 @@ def getSpecs():
     # print(platform.processor())
     # print(platform.architecture())
 
-
 class Linux:
     def __init__(self,):
 

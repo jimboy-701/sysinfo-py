@@ -4,7 +4,7 @@
 # http://www.python-course.eu/sys_module.php
 
 import os, sys, platform
-from OSAnalysis import *
+# from OSAnalysis import *
 
 
 def cmdargs(*args):
@@ -56,6 +56,12 @@ def getSpecs():
     # print(platform.system())
     # print(platform.processor())
     # print(platform.architecture())
+
+
+class Linux:
+    def __init__(self,):
+
+        self.message_string = "This is a Linux machine!\n"
 
 
 getPython()

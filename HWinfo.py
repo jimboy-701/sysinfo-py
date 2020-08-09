@@ -3,8 +3,7 @@
 
 # http://www.python-course.eu/sys_module.php
 
-import sys
-import platform
+import os, sys, platform
 from OSAnalysis import *
 
 
@@ -93,4 +92,4 @@ elif 'iPhone' in ident:
     Apple = Iphone()
     print(Apple.message_string)
 
-input()
+os._exit(0)

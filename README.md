@@ -3,3 +3,4 @@ Like CPU-Z, PCI-Z and GPU-Z - is cross platform \ OS compatible with IOS, Androi
 
 Updated
 Updated
+Updated

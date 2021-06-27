@@ -1,25 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+import os, sys, platform
+
+try:
+    import psutil
+except Exception as e:
+    errors.append(f'{e}')
+
+
+VERSION: str = "1.0.0"
 
 # http://www.python-course.eu/sys_module.php
+#
+print(sys.argv)
 
-import os, sys, platform
-# from OSAnalysis import *
-
-
-def cmdargs(*args):
-
-    arglist = list(args)
-    print(arglist)
-    raise SystemExit(0)
-
-
-# This needs fixing
-if (len(sys.argv)) > 0:
-    for i in range(1, (len(sys.argv))):
-        cmdargs(sys.argv[i])
-
+for i in range(len(sys.argv)):
+    if i == 0:
+        print("Function name: ", sys.argv[0])
+    else:
+        print(f"{i:1d}. argument: {sys.argv[i]}")
+        raise SystemExit(0)
 
 def getPython():
     PY2 = sys.version[0] == '2'

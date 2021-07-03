@@ -1,33 +1,61 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-import os, sys, platform
+import os
+import sys
+import platform
+from typing import List
 
-try:
-    import psutil
-except Exception as e:
-    errors.append(f'{e}')
+errors: List[str] = []
+try: import psutil
+except Exception as e: errors.append(f'{e}')
 
+VERSION: str = "0.5.0"
+SYSTEM: str
 
-VERSION: str = "1.0.0"
+if "windows" in sys.platform: SYSTEM = "Windows"
+elif "linux" in sys.platform: SYSTEM = "Linux"
+elif "bsd" in sys.platform: SYSTEM = "BSD"
+elif "darwin" in sys.platform: SYSTEM = "MacOS"
+elif "sunos" in sys.platform: SYSTEM = "SunOS"
+else: SYSTEM = "Other"
 
-# http://www.python-course.eu/sys_module.php
-#
-print(sys.argv)
-
-for i in range(len(sys.argv)):
-    if i == 0:
-        print("Function name: ", sys.argv[0])
+if errors:
+    print("ERROR!")
+    for error in errors:
+        print(error)
+    if SYSTEM == "Other":
+        print("\nUnsupported platform!\n")
     else:
-        print(f"{i:1d}. argument: {sys.argv[i]}")
-        raise SystemExit(0)
+        print("\nInstall required modules!\n")
+    quit(1)
+
+if len(sys.argv) > 1:
+    for arg in sys.argv[1:]:
+        if not arg in ["-c", "--cores", "-v", "--version", "-h", "--help"]:
+            print(f'Unrecognized argument: {arg}\n'
+                  f'Use argument -h or --help for help')
+            raise SystemExit(1)
+
+if "-h" in sys.argv or "--help" in sys.argv:
+    print(f'USAGE: {sys.argv[0]} [argument]\n\n'
+          f'Arguments:\n'
+          f'    -c, --cores           Display the number of cpu cores available\n'
+          f'    -v, --version         Show version info\n'
+          f'    -h, --help            Show this help message\n')
+    raise SystemExit(0)
+
+elif "-v" in sys.argv or "--version" in sys.argv:
+    print(f'hwinfo version: {VERSION}\n'
+            f'psutil version: {".".join(str(x) for x in psutil.version_info)}')
+    raise SystemExit(0)
+
+if "-c" or "--cores" in sys.argv:
+    print("Number of cores in system:", psutil.cpu_count())
+    raise SystemExit(0)
+
 
 def getPython():
-    PY2 = sys.version[0] == '2'
-
-    if PY2:
-        print("You need Python version >= 3.4 to execute this script.")
-        raise TypeError("unsupported version")
 
     print(sys.executable)
     print(sys.version)
@@ -56,43 +84,47 @@ def getSpecs():
     # print(platform.processor())
     # print(platform.architecture())
 
+
 class Linux:
     def __init__(self,):
 
         self.message_string = "This is a Linux machine!\n"
 
 
-getPython()
+class Windows:
+    def __init__(self,):
 
+        self.message_string = "This is a Microsoft Windows machine!\n"
+
+
+getPython()
 getSpecs()
 
-ident = platform.system()
-
-if 'Windows' in ident:
+if 'Windows' in SYSTEM:
     Windows = Microsoft()
     print(Windows.message_string)
 
-elif 'Linux' in ident:
+elif 'Linux' in SYSTEM:
     Gnu = Linux()
     print(Gnu.message_string)
 
-elif 'BSD' in ident:
+elif 'BSD' in SYSTEM:
     BsdUnix = Bsd()
     print(BsdUnix.message_string)
 
-elif 'SunOS' in ident:
+elif 'SunOS' in SYSTEM:
     Sun = Solaris()
     print(Sun.message_string)
 
-elif 'Darwin' in ident:
+elif 'Darwin' in SYSTEM:
     Mac = OSX()
     print(Mac.message_string)
 
-elif 'Android' in ident:
+elif 'Android' in SYSTEM:
     Droid = Android()
     print(Droid.message_string)
 
-elif 'iPhone' in ident:
+elif 'iPhone' in SYSTEM:
     Apple = Iphone()
     print(Apple.message_string)
 

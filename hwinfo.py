@@ -22,12 +22,9 @@ else: SYSTEM = "Other"
 
 if errors:
     print("ERROR!")
-    for error in errors:
-        print(error)
-    if SYSTEM == "Other":
-        print("\nUnsupported platform!\n")
-    else:
-        print("\nInstall required modules!\n")
+    for error in errors: print(error)
+    if SYSTEM == "Other": print("\nUnsupported platform!\n")
+    else: print("\nInstall required modules!\n")
     quit(1)
 
 if len(sys.argv) > 1:
@@ -42,7 +39,7 @@ if "-h" in sys.argv or "--help" in sys.argv:
           f'Arguments:\n'
           f'    -c, --cores           Display the number of cpu cores available\n'
           f'    -v, --version         Show version info\n'
-          f'    -h, --help            Show this help message\n')
+          f'    -h, --help            Show this help message')
     raise SystemExit(0)
 
 elif "-v" in sys.argv or "--version" in sys.argv:
